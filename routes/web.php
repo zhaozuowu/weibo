@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('singup', 'UserController@signup')->name('signup');
+Route::post('singup', 'UserController@create')->name('signup');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
